@@ -1,0 +1,77 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Demo.Device.MotionDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <StackPanel Orientation="Vertical">
+
+            <StackPanel>
+                <TextBlock Text="attitude" Style="{StaticResource PhoneTextLargeStyle}"/>
+                <Grid Margin="12 0 12 0">
+                    <TextBlock Height="30" HorizontalAlignment="Left"  Name="yawTextBlock" Text="YAW: 000" VerticalAlignment="Top" Foreground="Red" FontSize="25" FontWeight="Bold"/>
+                    <TextBlock Height="30" HorizontalAlignment="Center"  Name="pitchTextBlock" Text="PITCH: 000" VerticalAlignment="Top" Foreground="Green" FontSize="25" FontWeight="Bold"/>
+                    <TextBlock Height="30" HorizontalAlignment="Right"   Name="rollTextBlock" Text="ROLL: 000" VerticalAlignment="Top"  Foreground="Blue" FontSize="25" FontWeight="Bold"/>
+                </Grid>
+                <Grid Height="200">
+                    <Polygon Name="yawtriangle"
+      Points="205,135 240,50 275,135"
+      Stroke="Red"
+      StrokeThickness="2" >
+                        <Polygon.Fill>
+                            <SolidColorBrush Color="Red" Opacity="0.3"/>
+                        </Polygon.Fill>
+                        <Polygon.RenderTransform>
+                            <RotateTransform CenterX="240" CenterY="100"></RotateTransform>
+                        </Polygon.RenderTransform>
+                    </Polygon>
+                    <Polygon Name="pitchtriangle"
+      Points="205,135 240,50 275,135"
+      Stroke="Green"
+      StrokeThickness="2" >
+                        <Polygon.Fill>
+                            <SolidColorBrush Color="Green" Opacity="0.3"/>
+                        </Polygon.Fill>
+                        <Polygon.RenderTransform>
+                            <RotateTransform CenterX="240" CenterY="100"></RotateTransform>
+                        </Polygon.RenderTransform>
+                    </Polygon>
+                    <Polygon Name="rolltriangle"
+      Points="205,135 240,50 275,135"
+      Stroke="Blue"
+      StrokeThickness="2" >
+                        <Polygon.Fill>
+                            <SolidColorBrush Color="Blue" Opacity="0.3"/>
+                        </Polygon.Fill>
+                        <Polygon.RenderTransform>
+                            <RotateTransform CenterX="240" CenterY="100"></RotateTransform>
+                        </Polygon.RenderTransform>
+                    </Polygon>
+                </Grid>
+                <TextBlock Text="acceleration" Style="{StaticResource PhoneTextLargeStyle}"/>
+                <Grid Margin="12 0 12 0">
+                    <TextBlock Height="30" HorizontalAlignment="Left"  Name="xTextBlock" Text="X: 000" VerticalAlignment="Top" Foreground="Red" FontSize="25" FontWeight="Bold"/>
+                    <TextBlock Height="30" HorizontalAlignment="Center"  Name="yTextBlock" Text="Y: 000" VerticalAlignment="Top" Foreground="Green" FontSize="25" FontWeight="Bold"/>
+                    <TextBlock Height="30" HorizontalAlignment="Right"   Name="zTextBlock" Text="Z: 000" VerticalAlignment="Top"  Foreground="Blue" FontSize="25" FontWeight="Bold"/>
+                </Grid>
+                <Grid Height="300">
+                    <Line x:Name="xLine" X1="240" Y1="150" X2="340" Y2="150" Stroke="Red" StrokeThickness="4"></Line>
+                    <Line x:Name="yLine" X1="240" Y1="150" X2="240" Y2="50" Stroke="Green" StrokeThickness="4"></Line>
+                    <Line x:Name="zLine" X1="240" Y1="150" X2="190" Y2="200" Stroke="Blue" StrokeThickness="4"></Line>
+                </Grid>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+
+</phone:PhoneApplicationPage>

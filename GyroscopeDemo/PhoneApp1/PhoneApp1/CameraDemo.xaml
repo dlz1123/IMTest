@@ -1,0 +1,41 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Demo.Device.CameraDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="False">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <StackPanel Orientation="Vertical">
+
+            <StackPanel Orientation="Horizontal">
+                <Canvas Width="320" Height="240">
+                    <Canvas.Background>
+                        <VideoBrush x:Name="videoBrush" />
+                    </Canvas.Background>
+                </Canvas>
+
+                <Image Name="imgCapture" Width="320" Height="240" Margin="20 0 0 0" />
+                <Image Name="imgCaptureThumbnail" Width="32" Height="24" Margin="20 0 0 0" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="btnShutter" Content="快门" Click="btnShutter_Click" />
+                <Button x:Name="btnFlash" Content="闪光灯" Click="btnFlash_Click" />
+                <Button x:Name="btnResolution" Content="分辨率" Click="btnResolution_Click" />
+            </StackPanel>
+
+            <TextBlock Name="lblMsg" />
+
+        </StackPanel>
+    </Grid>
+
+</phone:PhoneApplicationPage>

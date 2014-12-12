@@ -1,0 +1,33 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Demo.Device.GpsDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <StackPanel Orientation="Vertical">
+
+            <!--跳转到隐私声明页（如果使用了 GPS 则必须要有“隐私声明”，否则不会通过微软的审核）-->
+            <HyperlinkButton Content="隐私声明" NavigateUri="/Device/PrivacyPolicy.xaml" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="10,6" HorizontalAlignment="Left" />
+
+            <TextBlock Name="lblStatus" />
+            
+            <Button Name="btnLow" Content="低精度定位" Click="btnLow_Click" />
+            <Button Name="btnHigh" Content="高精度定位" Click="btnHigh_Click" />
+            <Button Name="btnClose" Content="关闭定位" Click="btnClose_Click" />
+
+            <TextBlock Name="lblMsg" />
+            
+        </StackPanel>
+    </Grid>
+
+</phone:PhoneApplicationPage>
