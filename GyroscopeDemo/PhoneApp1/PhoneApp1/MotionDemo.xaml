@@ -70,6 +70,7 @@
                     <Line x:Name="zLine" X1="240" Y1="150" X2="190" Y2="200" Stroke="Blue" StrokeThickness="4"></Line>
                 </Grid>
             </StackPanel>
+            <Image Name="img" Width="40" Source="Assets\ApplicationIcon.png"/>
 
         </StackPanel>
     </Grid>

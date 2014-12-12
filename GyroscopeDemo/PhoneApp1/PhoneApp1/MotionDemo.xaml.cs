@@ -129,6 +129,19 @@ namespace Demo.Device
                 yLine.Y2 = yLine.Y1 - e.DeviceAcceleration.Y * 100;
                 zLine.X2 = zLine.X1 - e.DeviceAcceleration.Z * 50;
                 zLine.Y2 = zLine.Y1 + e.DeviceAcceleration.Z * 50;
+                var compositeTransform = new CompositeTransform();
+                var previousTransform = new MatrixTransform() { Matrix = System.Windows.Media.Matrix.Identity };
+
+                var transformGroup = new TransformGroup();
+                transformGroup.Children.Add(previousTransform);
+
+                compositeTransform.TranslateX = 100*e.DeviceAcceleration.X;
+                compositeTransform.TranslateY = -100*e.DeviceAcceleration.Y;
+                compositeTransform.ScaleX = e.DeviceAcceleration.Z*50;
+                compositeTransform.ScaleY = e.DeviceAcceleration.Z * 50;
+                transformGroup.Children.Add(compositeTransform);
+
+                img.RenderTransform = transformGroup;
             }
         }
 
